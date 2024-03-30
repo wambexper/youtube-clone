@@ -1,7 +1,13 @@
 const API_KEY = "AIzaSyCVwKurSR0Sb346-lhcAH2sPzjzp01t-cU";
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 
-
+function toggleButton(){
+   const toggleIcon = document.getElementById(toggleIcon);
+   toggleState =!toggleState;
+   if(toggleState){
+      toggleIcon.remove("fa-toggle-off");
+   }
+}
 async function fetchData(searchQuery, maxItems) {
    let response = await fetch(`${BASE_URL}/search?key=${API_KEY}&q=${searchQuery}&maxResults=${maxItems}&part=snippet`);
 //   console.log(response);
